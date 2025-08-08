@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Watch Party Room</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="room-container">
+    <header class="room-header">
+      <h1 id="room-title">Room</h1>
+      <div class="whoami" id="whoami">Role: ...</div>
+    </header>
+
+    <main class="room-main">
+      <section class="video-section">
+        <div id="player-container">
+          <!-- YouTube iframe or HTML5 video will be injected here -->
+        </div>
+        <div id="admin-controls" class="admin-controls hidden">
+          <button id="btn-play">Play</button>
+          <button id="btn-pause">Pause</button>
+          <button id="btn-sync">Resync</button>
+        </div>
+        <div class="notice" id="notice"></div>
+      </section>
+
+      <aside class="chat-section">
+        <div id="chat-log" class="chat-log"></div>
+        <form id="chat-form" class="chat-form">
+          <input id="chat-name" type="text" placeholder="Your name" maxlength="24" />
+          <input id="chat-input" type="text" placeholder="Type a message" maxlength="500" />
+          <button type="submit">Send</button>
+        </form>
+      </aside>
+    </main>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script src="/room.js" defer></script>
+</body>
+</html>

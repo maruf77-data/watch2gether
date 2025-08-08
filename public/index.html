@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Watch Party - Create Room</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Watch Party</h1>
+
+    <section class="card">
+      <h2>Create a Room</h2>
+      <form id="create-form">
+        <label>
+          Room name
+          <input id="room-name" name="roomName" type="text" placeholder="My Room" required />
+        </label>
+        <label>
+          Video link (YouTube, Google Drive, OneDrive, or direct .mp4)
+          <input id="video-url" name="videoUrl" type="url" placeholder="https://www.youtube.com/watch?v=..." required />
+        </label>
+        <button type="submit">Create Room</button>
+      </form>
+      <div id="links" class="links hidden">
+        <p><strong>Admin URL</strong> (you control playback): <a id="admin-url" href="#" target="_blank" rel="noopener"></a> <button id="copy-admin">Copy</button></p>
+        <p><strong>Guest URL</strong> (share with friends): <a id="guest-url" href="#" target="_blank" rel="noopener"></a> <button id="copy-guest">Copy</button></p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Join a Room</h2>
+      <form id="join-form">
+        <label>
+          Room URL
+          <input id="join-url" type="url" placeholder="http://localhost:3000/room/abcd1234" required />
+        </label>
+        <button type="submit">Join</button>
+      </form>
+    </section>
+
+    <footer>
+      <p>Built with Express + Socket.IO</p>
+    </footer>
+  </div>
+
+  <script src="/index.js" defer></script>
+</body>
+</html>
